@@ -130,4 +130,8 @@ export const IdeaContainer = styled.div`
   width: 30vw;
   height: 100vh;
   background-color: var(--gray-0);
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
