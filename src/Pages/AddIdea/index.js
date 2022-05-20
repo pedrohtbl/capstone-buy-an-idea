@@ -14,6 +14,7 @@ import linkedin from "../../assets/linkedin.svg";
 import twitter from "../../assets/twitter.svg";
 import { useLogin } from "../../Providers/Login";
 import { Redirect } from "react-router-dom";
+import Match from "../../Components/MatchText";
 
 const AddIdea = () => {
   const schema = yup.object().shape({
@@ -275,6 +276,8 @@ const AddIdea = () => {
           </form>
         </main>
       </section>
+
+      <Match />
     </DivAddidea>
   );
 };
