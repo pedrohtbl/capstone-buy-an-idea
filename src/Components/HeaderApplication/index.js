@@ -21,14 +21,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useEditProfile } from "../../Providers/EditProfile";
 
 const HeaderApplication = () => {
-	const history = useHistory();
-	const {setIsLoading} = useEditProfile()
+  const history = useHistory();
+  const { setIsLoading } = useEditProfile();
 
-	const handleLogout = () => {
-		setIsLoading(false)
-		history.push("/");
-		localStorage.removeItem("@buyAnIdea:Login");
-	};
+  const handleLogout = () => {
+    setIsLoading(false);
+    history.push("/");
+    localStorage.removeItem("@buyAnIdea:Login");
+  };
 
   const [state, setState] = useState({
     top: false,
@@ -102,7 +102,7 @@ const HeaderApplication = () => {
               {/* BOTAO CHAT */}
               <CustomIconButton onClick={() => history.push("/conversas")}>
                 <ChatBubbleIcon />
-                <Typography className="ml-4">Conversas</Typography>
+                <Typography className="ml-4">matches</Typography>
               </CustomIconButton>
 
               <Divider

@@ -11,6 +11,16 @@ export const InterPriseCardContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
 
+  button:hover {
+    box-shadow: 0 0 20px var(--color-primary);
+    border: none;
+    border-color: 1px solid var(--color-primary);
+  }
+
+  button > img:hover {
+    fill: var(--color-primary);
+  }
+
   img {
     animation: unset;
   }
@@ -39,7 +49,6 @@ export const InterPriseCardContainer = styled.div`
 
   .CardVideo {
     /* position: relative; */
-    /* width: ${({ inInfoCard }) => (inInfoCard ? "367px" : "342px")}; */
     width: 90%;
     height: ${({ inInfoCard }) => (inInfoCard ? "408px" : "411px")};
     object-fit: cover;
@@ -53,7 +62,6 @@ export const InterPriseCardContainer = styled.div`
     max-height: 8ch;
 
     display: ${({ inInfoCard }) => (inInfoCard ? "none" : "block")};
-    display: ${({ onVideo }) => (onVideo ? "none" : "flex")};
 
     border-radius: 6px;
 

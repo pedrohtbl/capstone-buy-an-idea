@@ -6,43 +6,37 @@ import { api } from "../../Services/api";
 import { useLogin } from "../../Providers/Login";
 
 const Chat = () => {
-	// const users = list;
-	const [usersList, setUsersList] = useState([])
-	const {user} = JSON.parse(localStorage.getItem("@buyAnIdea:Login"))
+  // const users = list;
+  const [usersList, setUsersList] = useState([]);
+  const { user } = JSON.parse(localStorage.getItem("@buyAnIdea:Login"));
 
-	useEffect(()=>{
-		api.get("/users")
-		.then( res =>{
-			setUsersList(res.data)
-			console.log(res.data)
-		})
-	},[])
+  useEffect(() => {
+    api.get("/users").then((res) => {
+      setUsersList(res.data);
+      console.log(res.data);
+    });
+  }, []);
 
-	return (
-		<div>
-			<h2>Conversas</h2>
-			<Box mt={5}>
-				{usersList.map((userData, index) => {
-						console.log(userData)
-						const data = userData.matches.filter(
-							(data) => data.matchId === user.id
-						);
+  return (
+    <div>
+      <h2>Matches</h2>
+      <Box mt={5}>
+        {usersList.map((userData, index) => {
+          console.log(userData);
+          const data = userData.matches.filter(
+            (data) => data.matchId === user.id
+          );
 
-						console.log(data);
+          console.log(data);
 
-						if (data.length > 0)
-							return (
-								<ContactCard
-									key={index}
-									user={user}
-									message={data[0].message}
-								/>
-							);
-					
-				})}
-			</Box>
-		</div>
-	);
+          if (data.length > 0)
+            return (
+              <ContactCard key={index} user={user} message={data[0].message} />
+            );
+        })}
+      </Box>
+    </div>
+  );
 };
 
 export default Chat;

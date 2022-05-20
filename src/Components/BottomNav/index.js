@@ -9,68 +9,68 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const BottomNav = () => {
-	const [state, setState] = useState({
-		top: false,
-		left: false,
-		bottom: false,
-		right: false,
-	});
+  const [state, setState] = useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
 
-	const handleOpenSwipable = () => {
-		setState({ ...state, left: true });
-	};
+  const handleOpenSwipable = () => {
+    setState({ ...state, left: true });
+  };
 
-	const history = useHistory();
+  const history = useHistory();
 
-	return (
-		<>
-			<SwipeableTemporaryDrawer
-				state={state}
-				setState={setState}
-				sx={{
-					display: { xs: "block", md: "none" },
-				}}
-			/>
+  return (
+    <>
+      <SwipeableTemporaryDrawer
+        state={state}
+        setState={setState}
+        sx={{
+          display: { xs: "block", md: "none" },
+        }}
+      />
 
-			<Box
-				sx={{
-					display: { xs: "block", md: "none" },
-					width: "100%",
-					position: "fixed",
-					bottom: 0,
-					borderTop: "2px solid",
-					borderColor: "var(--color-support-2)",
-				}}
-			>
-				<BottomNavigation
-					showLabels
-					// value={value}
-					// onChange={(event, newValue) => {
-					// 	setValue(newValue);
-					// }}
-					sx={{
-						bgcolor: "var(--color-support-2)",
-					}}
-				>
-					<BottomNavigationAction
-						label="Meu perfil"
-						icon={<AccountCircleIcon />}
-						onClick={() => history.push("/perfil")}
-					/>
-					<BottomNavigationAction
-						label="Conversas"
-						icon={<ChatBubbleIcon />}
-						onClick={() => history.push("/conversas")}
-					/>
-					<BottomNavigationAction
-						onClick={() => handleOpenSwipable()}
-						label="Menu"
-						icon={<MenuIcon />}
-					/>
-				</BottomNavigation>
-			</Box>
-		</>
-	);
+      <Box
+        sx={{
+          display: { xs: "block", md: "none" },
+          width: "100%",
+          position: "fixed",
+          bottom: 0,
+          borderTop: "2px solid",
+          borderColor: "var(--color-support-2)",
+        }}
+      >
+        <BottomNavigation
+          showLabels
+          // value={value}
+          // onChange={(event, newValue) => {
+          // 	setValue(newValue);
+          // }}
+          sx={{
+            bgcolor: "var(--color-support-2)",
+          }}
+        >
+          <BottomNavigationAction
+            label="Meu perfil"
+            icon={<AccountCircleIcon />}
+            onClick={() => history.push("/perfil")}
+          />
+          <BottomNavigationAction
+            label="Matches"
+            icon={<ChatBubbleIcon />}
+            onClick={() => history.push("/conversas")}
+          />
+          <BottomNavigationAction
+            onClick={() => handleOpenSwipable()}
+            label="Menu"
+            icon={<MenuIcon />}
+          />
+        </BottomNavigation>
+      </Box>
+    </>
+  );
 };
 
 export default BottomNav;

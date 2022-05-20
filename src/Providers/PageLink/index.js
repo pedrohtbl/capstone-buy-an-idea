@@ -9,7 +9,7 @@ export const PageLinkProvider = ({ children }) => {
       link: "/dashboard/investidor",
     },
     {
-      name: "Conversas",
+      name: "Matches",
       link: "/conversas",
     },
   ];
@@ -20,7 +20,7 @@ export const PageLinkProvider = ({ children }) => {
       link: "/dashboard",
     },
     {
-      name: "Conversas",
+      name: "Matches",
       link: "/conversas",
     },
     {
