@@ -5,9 +5,10 @@ import * as yup from "yup";
 import { Input } from "../../Components/Input-add-idea";
 import { InputBottom } from "../../Components/inputBottom-add-idea";
 import { Textarea } from "../../Components/Textarea-add-idea";
+import { useAddIdea } from "../../Providers/Add-Idea";
 
 import { DivAddidea } from "./style.js";
-// import facebook from "../../assets/facebook.svg";
+import facebook from "../../assets/facebook.svg";
 import instagram from "../../assets/instagram.svg";
 import linkedin from "../../assets/linkedin.svg";
 import twitter from "../../assets/twitter.svg";
@@ -55,7 +56,6 @@ const AddIdea = () => {
     const originalLink = event.target.value;
     const sliceLink = originalLink.slice(-11);
     const link = `https://www.youtube.com/embed/${sliceLink}`;
-
     setVideo(link);
   };
 

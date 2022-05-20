@@ -3,25 +3,26 @@ import styled from "styled-components";
 export const InterPriseCardContainer = styled.div`
   width: 100%;
   min-height: 100vh;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 80px auto;
   margin-top: ${({ inInfoCard }) => (inInfoCard ? "75px" : 0)};
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
   img {
     animation: unset;
   }
 
   .CardTitle {
     align-self: start;
-    padding-left: 12px;
+    padding-left: 8px;
 
     font-weight: 700;
-    font-size: 24px;
-    color: var(--orange);
-    padding-bottom: 60px;
+    font-size: 28px;
+    color: var(--color-secundary);
+    padding-bottom: 10px;
     /* padding-top temporário */
   }
 
@@ -29,12 +30,18 @@ export const InterPriseCardContainer = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    width: 100%;
+    height: 456px;
+    background: black;
+    /* padding-bottom: 0px; */
+    border-radius: 20px;
   }
 
   .CardVideo {
     /* position: relative; */
-    width: ${({ inInfoCard }) => (inInfoCard ? "367px" : "342px")};
-    height: ${({ inInfoCard }) => (inInfoCard ? "302px" : "411px")};
+    /* width: ${({ inInfoCard }) => (inInfoCard ? "367px" : "342px")}; */
+    width: 90%;
+    height: ${({ inInfoCard }) => (inInfoCard ? "408px" : "411px")};
     object-fit: cover;
 
     border-radius: 18.76px;
@@ -43,9 +50,10 @@ export const InterPriseCardContainer = styled.div`
 
   .CardAbout {
     width: 304px;
-    max-height: 16ch;
+    max-height: 8ch;
 
     display: ${({ inInfoCard }) => (inInfoCard ? "none" : "block")};
+    display: ${({ onVideo }) => (onVideo ? "none" : "flex")};
 
     border-radius: 6px;
 
@@ -64,7 +72,7 @@ export const InterPriseCardContainer = styled.div`
 
     text-align: center;
 
-    bottom: 60px;
+    bottom: 90px;
   }
 
   .CardButtons {
@@ -72,9 +80,11 @@ export const InterPriseCardContainer = styled.div`
     display: ${({ inInfoCard }) => (inInfoCard ? "none" : "flex")};
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
 
     gap: 28.6px;
+
+    margin: 0 auto;
 
     position: absolute;
     bottom: -25px;
@@ -87,7 +97,7 @@ export const InterPriseCardContainer = styled.div`
   }
 
   .ButtonX {
-    border: 3px solid var(--orange);
+    border: 3px solid var(--color-secundary);
   }
 
   .ButtonHamb {
@@ -111,33 +121,33 @@ export const InterPriseCardContainer = styled.div`
 `;
 
 export const InfoCard = styled.div`
-  bottom: 18px;
+  bottom: 40px;
 
   display: ${({ inInfoCard }) => (inInfoCard ? "flex" : "none")};
   align-items: flex-start;
   flex-direction: column;
-  width: 342px;
+  width: 95%;
   height: 900px;
 
   position: relative;
   background-color: #fff;
 
   border-radius: 8px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto;
 
   border: 2px solid var(--gray-4);
 
   h2,
   h4 {
     font-weight: 700;
-    color: var(--orange);
+    color: var(--color-secundary);
   }
 
   h2 {
     width: 90%;
     margin: 41px auto 36px auto;
 
-    color: var(--orange);
+    color: var(--color-secundary);
     font-size: 24px;
   }
 
@@ -160,30 +170,42 @@ export const InfoCard = styled.div`
     width: 200px;
   }
 
-  div {
+  div,
+  section {
     width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 25px;
     gap: 13px;
   }
 
   .InfoCardContact {
+    width: 100%;
+
+    margin: 0 auto;
+
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 6px;
+    flex-flow: column nowrap;
   }
 
   .InfoCardSocial {
+    align-self: start;
+
+    margin: 0 auto;
+
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 4px;
+  }
+
+  .InfoCardSocial img {
+    width: 17px;
+    height: 18px;
   }
 
   .ImgContainer {
@@ -204,12 +226,12 @@ export const InfoCard = styled.div`
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-
+    width: 100%;
+    margin: 0 auto;
     gap: 28.6px;
 
     position: absolute;
     bottom: -40px;
-    left: 34px;
   }
 
   .CardButtons2 button {
@@ -219,7 +241,7 @@ export const InfoCard = styled.div`
   }
 
   .ButtonX2 {
-    border: 3px solid var(--orange);
+    border: 3px solid var(--color-secundary);
   }
 
   .ButtonHamb2 {
