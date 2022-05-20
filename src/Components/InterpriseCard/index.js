@@ -4,7 +4,6 @@ import ButtonHamb from "../../assets/ButtonHamb.svg";
 import ButtonHeart from "../../assets/ButtonHeart.svg";
 import { useContext, useState } from "react";
 import { InterpriseListContext } from "../../Providers/interpriseList";
-
 import Insta from "../../assets/Insta.svg";
 import Facebook from "../../assets/Facebook.svg";
 import Linkedin from "../../assets/linkedin.svg";
@@ -13,47 +12,47 @@ import { useModal } from "../../Providers/Modal";
 import ModalSendMessage from "../ModalSendMessage";
 
 export const IntrerPriseCard = ({ empresa }) => {
-  const { idea, company } = empresa;
+	const { idea, company } = empresa;
 
-  const {
-    video,
-    about,
-    coreBusiness,
-    payback,
-    valuation,
-    document,
-    website,
-    facebook,
-    instagram,
-    linkedin,
-    twitter,
-    ideaValue,
-  } = idea;
+	const {
+		video,
+		about,
+		coreBusiness,
+		payback,
+		valuation,
+		document,
+		website,
+		facebook,
+		instagram,
+		linkedin,
+		twitter,
+		ideaValue,
+	} = idea;
 
-  const embedCodeVideo = video.slice(32, 43);
+	const embedCodeVideo = video.slice(32, 43);
 
-  const { cardIsOpen, setCardIsOpen, counter, setCounter } = useContext(
-    InterpriseListContext
-  );
+	const { cardIsOpen, setCardIsOpen, counter, setCounter } = useContext(
+		InterpriseListContext
+	);
 
-  const { acceptMatch } = useContext(MatchContext);
-  const { handleOpenMessageModal } = useModal();
+	const { acceptMatch } = useContext(MatchContext);
+	const { handleOpenMessageModal } = useModal();
 
-  return (
-    <InterPriseCardContainer inInfoCard={cardIsOpen}>
-      <ModalSendMessage id={empresa.id} />
-      <h2 className="CardTitle">{company.companyName}</h2>
-      <div className="CardVideoContainer">
-        <iframe
-          className="CardVideo"
-          src={`https://www.youtube.com/embed/${embedCodeVideo}`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+	return (
+		<InterPriseCardContainer inInfoCard={cardIsOpen}>
+			<ModalSendMessage id={empresa.id} />
+			<h2 className="CardTitle">{company.companyName}</h2>
+			<div className="CardVideoContainer">
+				<iframe
+					className="CardVideo"
+					src={`https://www.youtube.com/embed/${embedCodeVideo}`}
+					title="YouTube video player"
+					frameBorder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
+				></iframe>
 
-        <p className="CardAbout">{about}</p>
+				<p className="CardAbout">{about}</p>
 
         <section className="CardButtons">
           <button
@@ -110,10 +109,10 @@ export const IntrerPriseCard = ({ empresa }) => {
           </p>
         </div>
 
-        <div className="InfoCardSite">
-          <h4>Site da empresa</h4>
-          <a href={`${website}`}>{website}</a>
-        </div>
+				<div className="InfoCardSite">
+					<h4>Site da empresa</h4>
+					<a href={`${website}`}>{website}</a>
+				</div>
 
         <section className="InfoCardContact">
           <div className="InfoCardSocial InfoCardContact--insta">

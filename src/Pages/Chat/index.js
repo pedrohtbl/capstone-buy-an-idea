@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { users as list } from "../../Services/users";
 import { ContactCard } from "../../Components/ContactCard";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { api } from "../../Services/api";
 import { useLogin } from "../../Providers/Login";
 
