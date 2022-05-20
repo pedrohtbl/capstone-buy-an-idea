@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { InterpriseListContext } from "../../Providers/interpriseList";
 
 import Insta from "../../assets/Insta.svg";
-import Facebook from "../../assets/facebook.svg";
+// import Facebook from "../../assets/facebook.svg";
 import Linkedin from "../../assets/linkedin.svg";
 
 export const IntrerPriseCard = ({ empresa }) => {
@@ -117,7 +117,7 @@ export const IntrerPriseCard = ({ empresa }) => {
             </a>
           </div>
           <div className="InfoCardSocial InfoCardContact--facebook">
-            <img alt="Ícone do instagram" src={Facebook} />
+            {/* <img alt="Ícone do instagram" src={Facebook} /> */}
             <a
               rel="noreferrer"
               target="_blank"

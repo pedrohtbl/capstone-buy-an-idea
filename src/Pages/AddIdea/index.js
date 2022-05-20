@@ -7,7 +7,7 @@ import { InputBottom } from "../../Components/inputBottom-add-idea";
 import { Textarea } from "../../Components/Textarea-add-idea";
 
 import { DivAddidea } from "./style.js";
-import facebook from "../../assets/facebook.svg";
+// import facebook from "../../assets/facebook.svg";
 import instagram from "../../assets/instagram.svg";
 import linkedin from "../../assets/linkedin.svg";
 import twitter from "../../assets/twitter.svg";
@@ -162,7 +162,7 @@ const AddIdea = () => {
               <div>
                 <div className="container_addIdea-main-form-icons">
                   <figure>
-                    <img src={facebook} alt="facebook icon" />
+                    {/* <img src={facebook} alt="facebook icon" /> */}
                     <figcaption>facebook icon</figcaption>
                   </figure>
                   <small>facebook/</small>
